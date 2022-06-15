@@ -97,6 +97,90 @@
 //fullName()  
 
 
+// --- VAR is function scoped
+// variable declarated with VAR can be accessed anywhere within a function
+// 01
+//function greet(){
+//	var a = 'Hello'
+//	console.log(a);  // Hello
+//}
+//greet()
+
+// 02
+//function person(){
+//	var name = 'Joe'
+//	if( name == 'Joe' ){
+//		console.log(`His name is ${name}`); // His name is Joe
+//	}
+//}
+//person()
+
+
+// --- difference between VAR & LET declaration:
+
+//  01 - variable declarated with LET accessed particular in a block scope and VAR decl. accessed anywhere within a function
+
+//function fullName(){
+//	var firstName = 'Peter'
+//	if( firstName == 'Peter' ){
+//		let secondName = 'Johnson'
+//		//console.log(`Full name is ${firstName} ${secondName}`);  // Full name is Peter Johnson
+//	}
+//	//console.log(`Full name is ${firstName} ${secondName}`);  // error -  secondName is not defined
+//}
+//fullName()
+
+
+// 02 - LET doesn`t allow to redaclare variables
+
+// with VAR
+//var name = 'Peter'
+//var name = 'John'
+//console.log(name);  // John
+
+// with LET
+//let model = 'Sony'
+//let model = 'Samsung'
+//console.log(model);  // error - 'model' has already been declared
+
+// with LET - but we can update
+//let model = 'Sony'
+//model = 'Philips'
+//console.log(model);  // Philips
+
+
+// 03 - Redaclarating with VAR in a different block changes the value of the outher value too
+//var name = 'Sara'
+//console.log(name);  // Sara
+//{
+//	var name = 'Joan'  // Joan
+//	console.log(name);
+//}
+//console.log(name);  // Joan
+
+// 04 - Redaclarating with LET in a different scope or block treats that variables as a difference variable and variable outside does not to change
+
+//let color = 'black'
+//console.log(color); //  black
+//{
+//	let color = 'red'
+//	console.log(color);  // red
+//}
+//console.log(color); // black
+
+// 05  - LET doesnt allow Hoisting
+
+// variable decl. with VAR are hoisted to the top of the scope
+//console.log(job);
+//var job  // undefined, but hoisted
+
+// the keywoed declarated with let does not allow hoisting
+//console.log(car);  // Cannot access 'car' before initialization
+//let car
+
+
+
+
 
 
 
