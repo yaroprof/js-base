@@ -1,12 +1,41 @@
-// 01 
-//let object = new Object()
-//console.log(object);  // {}
+// 01 --- create an object with the keyword - new
 
-// 02 // The create method of Object creates a new object by passing the prototype object as a parameter
+// function Car (model, color, age) {
+//   this.color = color
+//   this.model = model
+//   this.age = age
+// }
+// const Car1 = new Car ('Audio', 'black', 2015)
+// console.log(`This ${Car1.model} is ${Car1.color} color , and ${Car1.age} old`);
+
+// 02 // The create method of Object creates a new object
 
 //02.1
-//let object = Object.create(null)
-//console.log(object);  // [Object: null prototype] {}
+// The Object.create() method is used to create a new object with the specified prototype objecct and properties.
+
+// proto - object
+function person(){
+  this.name = 'Peter'
+}
+// greet combine sekf context with person context
+// return 
+function greet(){
+  person.call(this)
+  return ` ${this.name} Hello `
+}
+
+// 01- create new Object which combine 2 object: person & greet
+greet.prototype = Object.create(person.prototype)
+console.log(greet());  //  Peter Hello 
+
+// 02 - create an instance - new Object - 'const app' with greet - constructor
+const app = new greet()
+console.log(app.name);  // Peter
+
+
+
+
+
 
 //02.2
 //const person = {
